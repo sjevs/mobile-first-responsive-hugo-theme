@@ -1,0 +1,21 @@
+<!doctype html>
+<html class="no-js" lang="">
+{{ partial "header" . }}
+<body>
+{{ partial "body-header" . }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-{{ if and (isset .Site.Params "showRightSidebarOnPost") (eq .Site.Params.showRightSidebarOnPost true) }}9{{ else }}12{{ end }}">
+        {{ .Render "single.hat" }}
+        {{ .Render "single.content" }}
+        {{ .Render "single.boot" }}
+    </div>
+    {{ if and (isset .Site.Params "showRightSidebarOnPost") (eq .Site.Params.showRightSidebarOnPost true)}}
+    <div class="col-sm-3">
+        {{ partial "block/content/sidebar" .}}
+    </div>
+    {{ end }}
+</div>
+{{ partial "body-footer" . }}
+</body>
+</html>

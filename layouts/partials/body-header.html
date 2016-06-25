@@ -1,0 +1,11 @@
+<div class="header-container">
+    <header class="wrapper clearfix">
+        <h1 class="title">{{ .Site.Title }}</h1>
+        <nav>
+            <ul>
+                {{ range .Site.Data.Menu }}
+                <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>{{ end }}
+            </ul>
+        </nav>
+    </header>
+</div>

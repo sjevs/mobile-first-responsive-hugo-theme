@@ -1,0 +1,19 @@
+[about]
+Name = "About"
+URL = "/about"
+
+[blog]
+Name = "Blog"
+URL = "/"
+
+[dashboard]
+Name = "Dashboard"
+URL = "blog.jevsejev.io"
+
+[posts]
+Name = "Posts"
+URL = "/post"
+
+[tags]
+Name = "Tags"
+URL = "/tag"

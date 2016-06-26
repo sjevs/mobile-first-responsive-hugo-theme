@@ -1,3 +1,14 @@
+<script>
+    // Hack around Hugo table rendering
+    var x = document.getElementsByTagName("table");
+    for (var i = 0; i < x.length; i++) {
+        x[i].classList.add("table");
+        x[i].classList.add("table-condensed");
+        x[i].classList.add("table-bordered");
+        x[i].classList.add("table-striped")
+    }
+</script>
+
 {{ if ne (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
 {{ if isset .Site.Params "googleAnalytics" }}<script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

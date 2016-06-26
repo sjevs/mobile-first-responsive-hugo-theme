@@ -44,14 +44,6 @@ textarea {
     resize: vertical;
 }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
@@ -63,29 +55,6 @@ body {
 .wrapper {
     width: 90%;
     margin: 0 5%;
-}
-
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #e44d26;
-}
-
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}
-
-.header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
-}
-
-.title {
-    color: white;
 }
 
 /* ==============
@@ -105,19 +74,17 @@ nav a {
 
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
 
-    color: white;
-    background: #e44d26;
+    color: #666666;
 }
 
 nav a:hover,
 nav a:visited {
-    color: white;
+    color: #666666;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #222;
 }
 
 /* ==============
@@ -142,28 +109,38 @@ nav a:hover {
     padding: 20px 0;
 }
 
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+body {
+    color: #666;
+    font-family: 'Open Sans', 'sans-serif';
+}
 
 h2 a {
     color: black;
     text-decoration: none;
 }
 
+header .navbar-brand {
+    font-size: 2em;
+    margin: .67em 0;
+    font-weight: 700;
+}
 
+.title {
+    color: #666666;
+}
 
+h1 {
+    font-size: 56px;
+    color: #444444;
+}
 
-
-
+.label-primary {
+    background-color: #2196f3;
+}
 
 
 

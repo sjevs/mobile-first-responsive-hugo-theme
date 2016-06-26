@@ -1,6 +1,7 @@
 <div class="footer-container">
-    <footer class="wrapper">
-        <h3>footer</h3>
+    <footer class="wrapper text-center">
+        {{ partial "block/footer/footline" . }}
+        {{ partial "block/footer/copyright" . }}
     </footer>
 </div>
 {{ partial "base/scripts" . }}

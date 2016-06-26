@@ -4,4 +4,4 @@ URL = "/"
 
 [tags]
 Name = "Tags"
-URL = "/tag"
+URL = "/tags"

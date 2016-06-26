@@ -161,7 +161,7 @@ h1 {
         float: left;
         /* width: 27%; */
         margin: 0 1.7%;
-        padding: 25px 2%;
+        padding: 35px 2% 0;
     }
 
     nav li:first-child a {

@@ -9,6 +9,7 @@
         {{ .Render "single.hat" }}
         {{ .Render "single.content" }}
         {{ .Render "single.boot" }}
+        </div>
     </div>
     {{ if and (isset .Site.Params "showRightSidebarOnPost") (eq .Site.Params.showRightSidebarOnPost true)}}
     <div class="col-sm-3">

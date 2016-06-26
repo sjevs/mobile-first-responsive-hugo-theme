@@ -1,12 +1,10 @@
 <div class="main-container">
     <div class="main wrapper clearfix">
 
-        <article>
-            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-            {{ range $paginator.Pages }}
-            {{ .Render "summary" }}
-            {{ end }}
-        </article>
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+        {{ end }}
 
         {{ if and (isset .Site.Params "showRightSidebar") (eq .Site.Params.showRightSidebar true) }}
         <aside>

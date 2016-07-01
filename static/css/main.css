@@ -118,10 +118,6 @@ header .navbar-brand {
     font-size: 1em;
 }
 
-.container h1 {
-    margin-top: 0;
-}
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -218,7 +214,7 @@ article section p {
 
     nav {
         display: block;
-        width: 35%;
+        width: 40%;
         float: right;
     }
 

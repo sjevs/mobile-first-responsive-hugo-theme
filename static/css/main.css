@@ -153,6 +153,11 @@ header .navbar-brand {
 .content figure img {
     max-width: 100%;
 }
+
+.content p em {
+    font-weight: bold;
+}
+
 article section {
     margin-bottom: 10px;
 }

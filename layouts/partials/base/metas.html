@@ -40,6 +40,7 @@
 <meta name="twitter:description" content="{{ .Description }}" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Site.Params.twitterImage }}">
 {{ end }}
 
 <script type="application/ld+json">
@@ -49,7 +50,7 @@
     "headline": "{{ .Title }}",
     "author": {
       "@type": "Person",
-      "name": "http://profiles.google.com/+{{ .Site.Params.googleplus }}?rel=author"
+      "name": "http://plus.google.com/+{{ .Site.Params.googleplus }}?rel=author"
     },
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
     "description": "{{ .Description }}",

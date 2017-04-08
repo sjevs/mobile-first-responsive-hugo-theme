@@ -9,17 +9,18 @@
 <link rel="author" href="http://plus.google.com/+{{ . }}">
 {{ end }}
 
-<meta property="og:title" content="{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }} {{ end }}">
+<meta property="og:title" content="{{ .Title }}{{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}"/>
 <meta property="og:url" content="{{ .Site.Params.domain }}{{ .Permalink }}" />
 <meta property="og:locale" content="{{ .Site.LanguageCode }}">
 
+{{ if ne .Site.Params.imageFacebook "" }}<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageFacebook }}" />{{end}}
+{{ if ne .Site.Params.facebookAppId "" }}<meta property="fb:app_id" content="{{ .Site.Params.facebookAppId }}" />{{end}}
 {{ if not .IsPage }}
 <meta property="og:type" content="website" />
 {{ else }}
 <meta property="og:type" content="article" />
 <meta property="og:description" content="{{ .Description }}"/>
-<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageFacebook }}" />
 
 {{ if ne .Site.Params.twitter "" }}
 <meta name="twitter:card" content="summary" />

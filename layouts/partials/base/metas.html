@@ -21,7 +21,7 @@
 <meta property="og:description" content="{{ .Description }}"/>
 <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
 <meta property="og:article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
-<meta property="og:image" content="{{ .Site.Params.imageFacebook }}" />
+<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageFacebook }}" />
 
 {{ if .Keywords }}
 {{ range .Keywords }}

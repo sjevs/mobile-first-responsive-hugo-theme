@@ -28,17 +28,12 @@
             var rect = el.getBoundingClientRect();
             return { top: rect.top + document.body.scrollTop, left: rect.left + document.body.scrollLeft };
         },
-        loadScript = function( url, callback )
+        loadScript = function( url )
         {
             var script	 = document.createElement( 'script' );
             script.src	 = url;
             script.async = true;
             script.setAttribute( 'data-timestamp', +new Date());
-            script.addEventListener( 'load', function()
-            {
-                if( typeof callback === 'function' )
-                    callback();
-            });
             ( document.head || document.body ).appendChild( script );
         },
         throttle		= function(a,b){var c,d;return function(){var e=this,f=arguments,g=+new Date;c&&g<c+a?(clearTimeout(d),d=setTimeout(function(){c=g,b.apply(e,f)},a)):(c=g,b.apply(e,f))}},
@@ -53,15 +48,15 @@
 
         init = function()
         {
-            if( !instance || !document.body.contains( instance ) || instance.disqusLoaderStatus == 'loaded' )
-                return true;
+            if( !instance || !document.body.contains( instance ) )
+                return;
 
             var winST	= window.pageYOffset,
                 offset	= getOffset( instance ).top;
 
             // if the element is too far below || too far above
             if( offset - winST > window.innerHeight * laziness || winST - offset - instance.offsetHeight - ( window.innerHeight * laziness ) > 0 )
-                return true;
+                return;
 
             window.removeEventListener( 'scroll', throttle( throttleTo, init ));
             window.removeEventListener( 'resize', throttle( throttleTo, init ));
@@ -69,14 +64,9 @@
             var tmp = document.getElementById( 'disqus_thread' );
             if( tmp ) tmp.removeAttribute( 'id' );
             instance.setAttribute( 'id', 'disqus_thread' );
-            instance.disqusLoaderStatus = 'loaded';
 
             window.disqus_config = disqusConfig;
-            loadScript( scriptUrl, function()
-            {
-                scriptStatus = 'loaded';
-
-            });
+            loadScript( scriptUrl );
         };
 
     window.addEventListener( 'scroll', throttle( throttleTo, init ));
@@ -96,15 +86,11 @@
         laziness		= options.laziness + 1;
         throttleTo		= options.throttle;
         disqusConfig	= options.disqusConfig;
-        scriptUrl		= options.scriptUrl; // set it only once
+        scriptUrl		= options.scriptUrl;
 
-        if( typeof element === 'string' )				instance = document.querySelector( element );
-        else if( typeof element.length === 'number' )	instance = element[ 0 ];
-        else											instance = element;
-
-        instance.disqusLoaderStatus = 'unloaded';
+        instance = document.querySelector(element);
 
         init();
     };
 
-}( window, document, 0 ));
+}( window, document ));

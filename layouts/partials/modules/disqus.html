@@ -1,7 +1,7 @@
 {{ if ne .Site.Params.disqusShortname ""}}
 
 <div class="disqus"></div>
-{{ if (eq (printf "%v" $.Site.BaseURL) "//localhost:1313/")}}<script src="/js/disqusLoaderUglyfied.js"></script>
+{{ if (eq (printf "%v" $.Site.BaseURL) "//localhost:1313/")}}<script src="/js/disqusLoader.js"></script>
 {{else}}<script src="{{ .Site.Params.dns }}/js/disqusLoaderUglyfied.js"></script>
 {{end}}
 

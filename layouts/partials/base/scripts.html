@@ -20,6 +20,8 @@
         events: ['click', 'auxclick', 'contextmenu']
     });
     ga('require', 'maxScrollTracker');
+    ga('require', 'pageVisibilityTracker');
     ga('send','pageview');
-</script>{{ end }}
+</script>
+<script async src="/js/autotrack.custom.js"></script>{{ end }}
 {{ end }}

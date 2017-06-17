@@ -75,7 +75,6 @@
             loadScript( scriptUrl, function()
             {
                 scriptStatus = 'loaded';
-
             });
         };
 
@@ -108,3 +107,5 @@
     };
 
 }( window, document, 0 ));
+
+disqusLoader(disqusLoaderSettings.element, disqusLoaderSettings.options);

@@ -1,18 +1,21 @@
 {{ if ne .Site.Params.disqusShortname ""}}
 
-<div class="disqus"></div>
-{{ if (eq (printf "%v" $.Site.BaseURL) "//localhost:1313/")}}<script async src="/js/disqusLoader.js"></script>
-{{else}}<script async src="{{ .Site.Params.dns }}/js/disqusLoaderUglyfied.js"></script>
-{{end}}
-
 <script>
-    disqusLoader( '.disqus',
-        {
+    window.disqusLoaderSettings = {
+        element: '.disqus',
+        options: {
             scriptUrl: '//{{ .Site.Params.disqusShortname }}.disqus.com/embed.js',
             disqusConfig: function () {
                 this.page.url = "{{ .Site.Params.domain }}{{ .RelPermalink }}";
                 this.page.identifier = "{{ .Site.Params.domain }}{{ .RelPermalink }}";
             }
-        });
+        }
+    };
 </script>
+
+<div class="disqus"></div>
+{{ if (eq (printf "%v" $.Site.BaseURL) "//localhost:1313/")}}<script async src="/js/disqusLoader.js"></script>
+{{else}}<script async src="{{ .Site.Params.dns }}/js/disqusLoaderUglyfied.js"></script>
+{{end}}
+
 {{ end }}

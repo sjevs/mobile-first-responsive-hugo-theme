@@ -1,0 +1,7 @@
+{{ range .Pages }}
+<section>
+    <h2><a href="{{ .Permalink }}">{{ if .Draft }}{{ .Site.Data.Strings.draft }} :: {{ end }}{{ .Title }}</a></h2>
+    {{ partial "modules/page/date" . }} - {{ partial "modules/page/tags" . }}
+    <p>{{ .Description | markdownify }}</p>
+</section>
+{{end}}

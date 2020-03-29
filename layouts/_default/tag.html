@@ -1,1 +1,28 @@
-SHIAT1111111
+<!doctype html>
+<html class="no-js" lang="en">
+{{ partial "header" . }}
+<body>
+{{ partial "body-header" . }}
+<div class="main-container">
+    <div class="main wrapper clearfix">
+
+        <h1>Tag: {{ .Title }}</h1>
+
+        <ul class="container content">
+            {{ range .Data.Pages.GroupByDate "2006" }}
+            <h2>{{ .Key }}</h2>
+            <ul id="list">
+                {{range .Pages }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }} {{ if .Param "draft"}}DRAFT{{end}}</a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </ul>
+        </ul>
+    </div>
+</div>
+{{ partial "body-footer" . }}
+</body>
+</html>

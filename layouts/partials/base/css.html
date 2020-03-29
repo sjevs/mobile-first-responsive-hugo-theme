@@ -1,7 +1,7 @@
 {{ if (eq (printf "%v" $.Site.BaseURL) "//localhost:1313/")}}<link rel="stylesheet" href="/css/normalize.min.css">
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/main.css">
-{{ else }}<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/normalize.min.css?{{ .Now.Format "2006-01-02T15:04:05Z07:00" }}">
-<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/bootstrap.min.css?{{ .Now.Format "2006-01-02T15:04:05Z07:00" }}">
-<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/main.css?{{ .Now.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ else }}<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/normalize.min.css?{{ Now.Format "2006-01-02T15:04:05Z07:00" }}">
+<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/bootstrap.min.css?{{ Now.Format "2006-01-02T15:04:05Z07:00" }}">
+<link rel="stylesheet" href="{{ .Site.Params.dns }}/css/main.css?{{ Now.Format "2006-01-02T15:04:05Z07:00" }}">
 {{end}}

@@ -11,7 +11,7 @@
             <ul id="list">
                 {{range .Pages }}
                 <li>
-                    <a href="{{ .Permalink }}">{{ .Title }} {{ if .GetParam "draft"}}DRAFT{{end}}</a>
+                    <a href="{{ .Permalink }}">{{ .Title }} {{ if .Param "draft"}}DRAFT{{end}}</a>
                 </li>
                 {{ end }}
             </ul>

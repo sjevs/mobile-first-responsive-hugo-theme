@@ -25,3 +25,6 @@
 </script>
 <script async src="/js/autotrack.custom.js"></script>{{ end }}
 {{ end }}
+{{ if and (.IsPage) ( ne .Site.Params.addThisPubId "" ) }}
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ .Site.Params.addThisPubId }}"></script>
+{{ end }}

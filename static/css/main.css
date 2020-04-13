@@ -150,12 +150,12 @@ header .navbar-brand {
     margin-right: 5px;
 }
 
-.content figure img {
-    max-width: 100%;
+.content figure {
+    text-align: center;
 }
 
-.content p em {
-    font-weight: bold;
+.content figure img {
+    max-width: 100%;
 }
 
 article section {

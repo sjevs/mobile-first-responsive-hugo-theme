@@ -12,8 +12,7 @@
 <meta property="og:site_name" content="{{ .Site.Title }}"/>
 <meta property="og:url" content="{{ .Site.Params.domain }}{{ .Permalink }}" />
 <meta property="og:locale" content="{{ .Site.LanguageCode }}">
-
-{{ if ne .Site.Params.imageFacebook "" }}<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageFacebook }}" />{{end}}
+{{ if .Params.postImage }}<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Params.postImage }}" />{{ else }}{{ if ne .Site.Params.imageFacebook "" }}<meta property="og:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageFacebook }}" />{{end}}{{ end }}
 {{ if ne .Site.Params.facebookAppId "" }}<meta property="fb:app_id" content="{{ .Site.Params.facebookAppId }}" />{{end}}
 {{ if not .IsPage }}
 <meta property="og:type" content="website" />
@@ -29,7 +28,7 @@
 <meta name="twitter:description" content="{{ .Description }}" />
 <meta name="twitter:url" content="{{ .Site.Params.domain }}{{ .Permalink }}" />
 <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
-<meta name="twitter:image" content="{{ .Site.Params.domain }}{{ .Site.Params.imageTwitter }}">
+<meta name="twitter:image" content="{{ .Site.Params.domain }}{{ if .Params.postImage }}{{ .Params.postImage }}{{ else }}{{ .Site.Params.imageTwitter }}{{ end }}">
 {{ end }}
 
 <script type="application/ld+json">
@@ -47,9 +46,15 @@
     },
      "image": {
       "@type": "ImageObject",
+{{ if .Params.postImage }}
+      "url": "{{ .Site.Params.domain }}{{ .Params.postImage }}",
+      "width":{{ .Params.postImageWidth }},
+      "height":{{ .Params.postImageHeight }}
+{{ else }}
       "url": "{{ .Site.Params.domain }}{{ .Site.Params.imageBig }}",
       "width":{{ .Site.Params.imageBigWidth }},
       "height":{{ .Site.Params.imageBigHeight }}
+{{ end }}
     }
   }
 </script>
